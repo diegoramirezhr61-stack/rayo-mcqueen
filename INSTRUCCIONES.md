@@ -59,3 +59,8 @@ git push -u origin main
 | `.streamlit/config.toml` | Colores del tema (rojo Rayo, crema, amarillo). |
 
 Ideas clave que deben saber explicar: media y desviación estándar muestral (`÷ n−1`) vs poblacional (`÷ n`), incertidumbre `u = s/√n`, el valor `z` y la tabla normal Φ(z), y qué significan `r` y la pendiente `b` en la regresión.
+
+## 5. Render (publicar) — configuración
+- **Build Command:** `pip install -r requirements.txt`
+- **Start Command:** `streamlit run app.py --server.port $PORT --server.address 0.0.0.0`
+- Al subir a GitHub, verifica que exista la carpeta `.streamlit` (es oculta). Si usas "Upload files", arrastra la carpeta completa. La app ya fuerza el tema claro por código, así que las letras se ven aunque falte.

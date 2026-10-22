@@ -56,6 +56,36 @@ div.stButton > button:hover {{ background: {AMARILLO}; color: {NEGRO}; border-co
 [data-testid="stMetric"] {{ background: #fff; border-top: 5px solid {AMARILLO}; border-radius: 10px;
   padding: 8px 12px; box-shadow: 0 2px 6px rgba(0,0,0,.1); }}
 .pie {{ text-align: center; color: {AZUL}; font-size: .85rem; margin-top: 24px; }}
+
+/* ── Forzar tema claro aunque el navegador/Render use modo oscuro ── */
+:root {{ color-scheme: light; }}
+[data-testid="stHeader"] {{ background: transparent; }}
+section.main, [data-testid="stMain"] {{ color: {NEGRO}; }}
+section.main p, section.main li, section.main label, section.main span, section.main small,
+section.main h1, section.main h4, section.main h5, section.main h6, section.main td, section.main th,
+[data-testid="stMain"] p, [data-testid="stMain"] li, [data-testid="stMain"] label, [data-testid="stMain"] span,
+[data-testid="stMain"] small, [data-testid="stMain"] h1, [data-testid="stMain"] h4,
+[data-testid="stMain"] h5, [data-testid="stMain"] h6, [data-testid="stMain"] td, [data-testid="stMain"] th,
+[data-testid="stMain"] [data-testid="stMarkdownContainer"] * {{ color: {NEGRO}; }}
+section.main h2, section.main h3, [data-testid="stMain"] h2, [data-testid="stMain"] h3 {{ color: {AZUL}; }}
+.tarjeta, .tarjeta * {{ color: {NEGRO} !important; }}
+.tarjeta b {{ color: {ROJO} !important; }}
+.cabecera h1, .cabecera h1 * {{ color: #fff !important; }}
+.cabecera .rayo, .cabecera p {{ color: {AMARILLO} !important; }}
+.cabecera .equipo {{ color: #fff !important; }}
+div.stButton > button, div.stButton > button * {{ color: #fff !important; }}
+div.stButton > button:hover, div.stButton > button:hover * {{ color: {NEGRO} !important; }}
+[data-baseweb="textarea"], [data-baseweb="input"], [data-baseweb="base-input"],
+[data-baseweb="select"] > div, [data-testid="stNumberInput"] input {{ background-color: #ffffff !important; }}
+[data-baseweb="textarea"] textarea, [data-baseweb="input"] input, [data-baseweb="base-input"] input,
+[data-baseweb="select"] *, [data-testid="stNumberInput"] input {{ color: {NEGRO} !important; -webkit-text-fill-color: {NEGRO} !important; }}
+[data-testid="stExpander"] details {{ background: #ffffff; border: 1px solid #e0d6b8; border-radius: 10px; }}
+[data-testid="stExpander"] summary, [data-testid="stExpander"] summary * {{ color: {AZUL} !important; }}
+[data-testid="stExpander"] details * {{ color: {NEGRO}; }}
+[data-testid="stMetric"], [data-testid="stMetric"] * {{ color: {NEGRO} !important; }}
+[data-testid="stAlert"], [data-testid="stAlert"] * {{ color: {NEGRO} !important; }}
+[data-baseweb="tab"] {{ color: {AZUL} !important; }}
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] * {{ color: #5a5a5a !important; }}
 </style>
 """, unsafe_allow_html=True)
 
