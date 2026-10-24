@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import streamlit as st
+import streamlit.components.v1 as components
 
 import motor as m
 
@@ -32,6 +33,24 @@ NEGRO = "#14181F"      # Jackson Storm
 CREMA = "#FFF8E7"
 
 st.set_page_config(page_title="Rayo McQueen · Estadística Aplicada", page_icon="⚡", layout="wide")
+
+# Evita que Chrome "traduzca" la página (rompe fórmulas: x̄→"incógnita", n→"norte") y fuerza modo claro
+components.html("""
+<script>
+try {
+  const d = window.parent.document;
+  d.documentElement.setAttribute("lang", "es");
+  d.documentElement.setAttribute("translate", "no");
+  d.documentElement.classList.add("notranslate");
+  d.body.setAttribute("translate", "no");
+  [["google", "notranslate"], ["color-scheme", "light"], ["content-language", "es"]].forEach(([n, c]) => {
+    let m = d.querySelector('meta[name="' + n + '"]');
+    if (!m) { m = d.createElement("meta"); m.setAttribute("name", n); d.head.appendChild(m); }
+    m.setAttribute("content", c);
+  });
+} catch (e) {}
+</script>
+""", height=0)
 
 st.markdown(f"""
 <style>
@@ -86,6 +105,20 @@ div.stButton > button:hover, div.stButton > button:hover * {{ color: {NEGRO} !im
 [data-testid="stAlert"], [data-testid="stAlert"] * {{ color: {NEGRO} !important; }}
 [data-baseweb="tab"] {{ color: {AZUL} !important; }}
 [data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] * {{ color: #5a5a5a !important; }}
+/* ── Refuerzo: cuadros de texto, código y expanders SIEMPRE claros ── */
+textarea, input, select {{ background-color: #ffffff !important; background-image: none !important;
+  color: {NEGRO} !important; -webkit-text-fill-color: {NEGRO} !important; caret-color: {NEGRO}; }}
+[data-baseweb="textarea"], [data-baseweb="textarea"] > div, [data-baseweb="input"], [data-baseweb="input"] > div,
+[data-baseweb="base-input"], [data-baseweb="select"] > div, [data-testid="stTextAreaRootElement"],
+[data-testid="stTextInputRootElement"], [data-testid="stNumberInputContainer"] {{
+  background: #ffffff !important; background-image: none !important; border-color: #d9c98f !important; }}
+[data-testid="stExpander"], [data-testid="stExpander"] details, [data-testid="stExpander"] summary,
+[data-testid="stExpander"] details > div {{ background: #ffffff !important; background-image: none !important; }}
+[data-testid="stExpander"] summary:hover {{ background: #FFE9A8 !important; }}
+code, pre, [data-testid="stCode"], [data-testid="stCodeBlock"], .stMarkdown code {{
+  background: #FFE9A8 !important; color: {NEGRO} !important; -webkit-text-fill-color: {NEGRO} !important; }}
+[data-testid="stMain"] .katex, [data-testid="stMain"] .katex * {{ color: {NEGRO} !important; }}
+[data-testid="stMain"] [data-testid="stCaptionContainer"] * {{ color: #5a5a5a !important; }}
 </style>
 """, unsafe_allow_html=True)
 

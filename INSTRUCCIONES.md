@@ -62,5 +62,8 @@ Ideas clave que deben saber explicar: media y desviación estándar muestral (`�
 
 ## 5. Render (publicar) — configuración
 - **Build Command:** `pip install -r requirements.txt`
-- **Start Command:** `streamlit run app.py --server.port $PORT --server.address 0.0.0.0`
-- Al subir a GitHub, verifica que exista la carpeta `.streamlit` (es oculta). Si usas "Upload files", arrastra la carpeta completa. La app ya fuerza el tema claro por código, así que las letras se ven aunque falte.
+- **Start Command (usa ESTE, fuerza el tema claro aunque falte .streamlit):**
+```
+streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true --theme.base light --theme.backgroundColor "#FFF8E7" --theme.secondaryBackgroundColor "#FFE9A8" --theme.textColor "#14181F" --theme.primaryColor "#C8102E"
+```
+- Si Chrome ofrece traducir la página, elige *Nunca traducir español*; la app ya lo desactiva sola.
