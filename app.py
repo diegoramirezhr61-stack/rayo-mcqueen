@@ -16,7 +16,7 @@ import streamlit.components.v1 as components
 import motor as m
 
 # ═════════════════════════ DATOS DEL EQUIPO (edita aquí) ═════════════════════════
-INTEGRANTES = ["Marck Anthony Chanchavac Bay", "Helen Mishell Buc Lorenzo "]
+INTEGRANTES = ["Marck Anthony Chanchavac Bay"]
 ASIGNATURA = "Física II"
 SECCION = "A"
 CODIGO_CURSO = "22026-2990-020-A"
